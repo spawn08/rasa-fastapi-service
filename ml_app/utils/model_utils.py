@@ -13,12 +13,12 @@ def load_model(model_name):
     return interpreter
 
 
-async def train_model(model_name, lang):
+async def train_rasa_model(model_name, lang):
     _config = RasaNLUModelConfig({"pipeline": PIPELINE_INTENT_WITHOUT_SPLIT, "language": "en"})
     (trainer, trained, persisted_path) = await train(
         _config,
         path=MODEL_PATH,
-        data=DATA_PATH + model_name + '_' + lang,
+        data=DATA_PATH + model_name + '_' + lang + ".md",
         fixed_model_name='spawnai_en'
     )
     return {'model': model_name, 'message': 'Model Trained Successfully'}

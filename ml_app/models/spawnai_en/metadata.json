@@ -2,8 +2,8 @@
     "language": "en",
     "pipeline": [
         {
-            "intent_tokenization_flag": true,
-            "intent_split_symbol": "+",
+            "intent_tokenization_flag": false,
+            "intent_split_symbol": "_",
             "token_pattern": null,
             "name": "WhitespaceTokenizer",
             "class": "rasa.nlu.tokenizers.whitespace_tokenizer.WhitespaceTokenizer"
@@ -214,6 +214,6 @@
             "class": "rasa.nlu.selectors.response_selector.ResponseSelector"
         }
     ],
-    "trained_at": "20201206-144901",
+    "trained_at": "20201206-204024",
     "rasa_version": "2.1.3"
 }

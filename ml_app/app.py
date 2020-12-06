@@ -2,7 +2,6 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from starlette.status import HTTP_401_UNAUTHORIZED
 
-from ml_app.config.config import *
 from ml_app.utils.model_utils import *
 
 app = FastAPI()
@@ -33,7 +32,10 @@ async def start_up():
 @app.get('/train')
 async def train_model(model_name: str, lang: str,
                       dependencies=Depends(get_current_username)):
-    return train_model(model_name, lang)
+    global model_cache
+    formatted_model_name = model_name + '_' + lang
+    model_cache[formatted_model_name] = None
+    return await train_rasa_model(model_name, lang)
 
 
 @app.get('/predict')
