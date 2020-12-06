@@ -214,6 +214,6 @@
             "class": "rasa.nlu.selectors.response_selector.ResponseSelector"
         }
     ],
-    "trained_at": "20201206-204024",
+    "trained_at": "20201206-204443",
     "rasa_version": "2.1.3"
 }

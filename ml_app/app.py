@@ -23,9 +23,9 @@ async def get_current_username(credentials: HTTPBasicCredentials = Depends(secur
 async def start_up():
     global loaded_model
     global model_cache
-    model_name = MODEL_PATH + DEFAULT_MODEL
-    loaded_model = load_model(model_name)
-    model_cache[model_name] = loaded_model
+    formatted_model_name = MODEL_PATH + DEFAULT_MODEL
+    loaded_model = load_model(formatted_model_name)
+    model_cache[DEFAULT_MODEL] = loaded_model
     pass
 
 
@@ -47,7 +47,7 @@ async def predict(q: str,
     global model_cache
     global loaded_model
     model_name = model_name + '_' + lang
-    model_path = MODEL_PATH + '\\' + model_name
+    model_path = MODEL_PATH + model_name
     if model_cache.get(model_name) == None:
         model_cache[model_name] = load_model(model_path)
 
