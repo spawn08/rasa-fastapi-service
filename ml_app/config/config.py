@@ -1,8 +1,8 @@
 USERNAME = 'onebotsolution'
 PASSWORD = 'OneBotFinancialServices'
 DEFAULT_MODEL = 'spawnai_en'
-MODEL_PATH = 'C:\\Users\\Amar\\PycharmProjects\\rasa_test\\ml_app\\models\\'
-DATA_PATH = 'C:\\Users\\Amar\\PycharmProjects\\rasa_test\\ml_app\\data\\'
+MODEL_PATH = './models/'
+DATA_PATH = './data/'
 EPOCHS = 'epochs'
 PIPELINE_INTENT_SPLIT = [
     {

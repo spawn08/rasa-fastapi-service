@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from starlette.status import HTTP_401_UNAUTHORIZED
 
-from ml_app.utils.model_utils import *
+from utils.model_utils import *
 
 app = FastAPI()
 security = HTTPBasic()

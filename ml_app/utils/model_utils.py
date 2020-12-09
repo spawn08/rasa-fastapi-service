@@ -5,7 +5,7 @@ from rasa.utils.tensorflow.constants import (
     EPOCHS,
 )
 from rasa.nlu.convert import convert_training_data
-from ml_app.config.config import *
+from config.config import *
 
 
 def load_model(model_name):
